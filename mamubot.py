@@ -1,5 +1,12 @@
 import discord
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print("Starting mamubot.")
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
+
+@client.event
+async def on_ready():
+    print("launch mamubot")
+
+client.run("token name")
